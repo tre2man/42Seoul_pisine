@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 23:56:09 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 00:27:20 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/01 00:29:40 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/01 00:38:04 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	index;
+	int	dest_index;
+	int	src_index;	
 
-	index = 0;
-	while (s1[index] && s2[index])
+	dest_index = 0;
+	src_index = 0;
+	while (dest[dest_index])
+		dest_index++;
+	while (src[src_index])
 	{
-		if (s1[index] > s2[index])
-			return (1);
-		else if (s1[index] < s2[index])
-			return (-1);
-		index++;
+		dest[dest_index] = src[src_index];
+		dest_index++;
+		src_index;
 	}
-	if (s1[index])
-		return (1);
-	else if (s2[index])
-		return (-1);
-	else
-		return (0);
+	dest[dest_index] = '\0';
+	return (dest);
 }
+

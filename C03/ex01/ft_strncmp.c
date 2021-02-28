@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 23:56:09 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 00:27:20 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/01 00:27:34 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/01 00:29:29 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2, unsigned int n);
 {
 	int	index;
 
 	index = 0;
-	while (s1[index] && s2[index])
+	while (s1[index] && s2[index] && index < n)
 	{
 		if (s1[index] > s2[index])
 			return (1);
