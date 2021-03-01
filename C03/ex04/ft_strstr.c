@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 00:27:34 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 16:52:12 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/01 11:48:06 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/01 17:07:44 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	index;
+	int	index;
+	int	find_index;
 
 	index = 0;
-	while (s1[index] && s2[index] && (index < n - 1))
+	if (!to_find)
+		return (str);
+	while (str[index])
 	{
-		if (s1[index] > s2[index])
-			return (1);
-		else if (s1[index] < s2[index])
-			return (-1);
+		find_index = 0;
+		while (str[index + find_index] == to_find[find_index] && to_find[find_index])
+			find_index++;
+		if (!to_find[find_index])
+			return (str + index);
 		index++;
 	}
-	if (s1[index])
-		return (1);
-	else if (s2[index])
-		return (-1);
-	else
-		return (0);
+	return ('\0');
 }

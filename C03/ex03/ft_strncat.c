@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 00:27:34 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 16:52:12 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/01 11:31:57 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/01 17:09:12 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	index;
+	unsigned int	dest_len;	
 
 	index = 0;
-	while (s1[index] && s2[index] && (index < n - 1))
+	dest_len = 0;
+	while (*dest)
 	{
-		if (s1[index] > s2[index])
-			return (1);
-		else if (s1[index] < s2[index])
-			return (-1);
+		dest++;
+		dest_len++;
+	}
+	while (dest[index] && src[index] && index < nb)
+	{
+		dest[dest_len + index] = src[index];
 		index++;
 	}
-	if (s1[index])
-		return (1);
-	else if (s2[index])
-		return (-1);
-	else
-		return (0);
+	dest[dest_len + index] = '\0';
+	return (dest);
 }

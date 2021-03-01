@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 00:29:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 14:34:59 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/01 16:42:38 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	dest_index;
-	int	src_index;	
 
-	dest_index = 0;
+unsigned int	ft_strlen(char *src)
+{
+	unsigned int	index;
+
+	index = 0;
+	while (src[index])
+		index++;
+	return (index);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	dest_index;
+	unsigned int	src_index;
+
+	dest_index = ft_strlen(dest);
 	src_index = 0;
-	while (dest[dest_index])
-		dest_index++;
-	while (src[src_index])
+	while (src[src_index] && dest_index + 1 < size)
 	{
 		dest[dest_index] = src[src_index];
 		dest_index++;
 		src_index++;
 	}
-	dest[dest_index] = '\0';
-	return (dest);
+	if (dest_index < size)
+		dest[dest_index] ='\0';
+	while (src[src_index])
+	{
+		src_index++;
+		dest_index++;
+	}
+	return (dest_index);
 }
-
