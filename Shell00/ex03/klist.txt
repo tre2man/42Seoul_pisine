@@ -1,0 +1,5 @@
+Credentials cache: API:4D68E00C-AA35-4942-91EE-D8B591807F67
+        Principal: namwkim@42SEOUL.KR
+
+  Issued                Expires               Principal
+Feb 16 14:39:44 2021  Feb 17 00:39:39 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
