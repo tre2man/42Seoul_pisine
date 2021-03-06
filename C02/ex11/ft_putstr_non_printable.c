@@ -6,7 +6,7 @@
 /*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:09:49 by namwkim           #+#    #+#             */
-/*   Updated: 2021/02/25 21:26:03 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/06 15:07:07 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	g_arr[16];
 
-void	ft_hex(char input)
+void	ft_hex(unsigned char input)
 {
 	write(1, "\\", 1);
 	write(1, &g_arr[input / 16], 1);
