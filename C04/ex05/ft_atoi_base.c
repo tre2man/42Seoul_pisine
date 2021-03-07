@@ -6,60 +6,94 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 22:05:23 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 22:28:56 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/07 17:21:07 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_ex05(char *base)
+int	ft_num(char input, char *base)
+{
+	int	index;
+
+	index = -1;
+	while (base[++index])
+	{
+		if (base[index] == input)
+			return (index);
+	}
+}
+
+int	ft_is_available(char input, char *base)
+{
+	int	index;
+
+	index = -1;
+	while (base[++index])
+	{
+		if (base[index] == input)
+			return (1);
+	}
+	return (0);
+}
+
+int	ft_base_len(char *base)
+{
+	int	base_len;
+
+	base_len = 0;
+	while (base[base_len])
+	{
+		base_len++;
+	}
+	return (base_len);
+}
+
+int	ft_base_correct(char *base)
 {
 	int	i;
 	int	j;
-	char	temp;
 
-	i = 1;
-	while (base[i])
+	i = -1;
+	if (!base[0] || !base[1])
+	       return (0);	
+	while (base[++i])
 	{
-		i = j;
-		while (base[j])
+		j = -1;
+		if (base[i] == '+' || base[i] == '-')
+			return (0);
+		while (base[++j])
 		{
-			if (base[j - 1] > base[j])
-			{
-				temp = base[j];
-				base[j] = base[j - 1];
-				base[j - 1] = temp;
-			}
-			j++;
+			if (i != j && base[i] == base[j])
+				return (0);
 		}
-		i++;
 	}
+	return (1);
 }
 
-int	ft_atoi_base(char *str, char *base)
+int	ft_atoi_base(char *arr, char *base)
 {
 	int	ans;
+	int	index;
 	int	minus;
-	char	*base_copy;
-
+	int	base_len;
+	
 	ans = 0;
+	index = 0;
 	minus = 0;
-	ft_sort_ex05(base);
-	base_copy = base;
-	while(*base)
+	if (!ft_base_correct(base))
+		return (0);
+	base_len = ft_base_len(base);
+	while (str[index] < '0' || str[index] > '9')
 	{
-		if (!base || !*(base + 1) || *base == '+' || *base == '-' || *base == *(base + 1))
-			return (0);
-		base++;
-	}
-	while (*str < '0' || *str > '9')
-	{
-		if (*str == '-')
+		if (str[index] == '-')
 			minus++;
-		str++;
+		index++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (ft_is_available(str[index], base))
 	{
-
+		ans = (ans * base_len) + ft_num(str[index], base);
+		index++;
 	}
+	if (minus % 2)
+		ans *= -1;
+	return (ans);
 }
-
-
