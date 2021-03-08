@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 19:58:15 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/07 16:39:13 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/08 13:01:40 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_correc_base(char *base)
 			return (0);
 		while (base[++j])
 		{
-			if (i != j && base[i] == [j])
+			if (i != j && base[i] == base[j])
 				return (0);
 		}
 	}
