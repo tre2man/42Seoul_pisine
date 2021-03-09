@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 22:05:23 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 12:21:36 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/08 19:44:39 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_num(char input, char *base)
+int		ft_num(char input, char *base)
 {
 	int	index;
 
@@ -20,9 +20,10 @@ int	ft_num(char input, char *base)
 		if (base[index] == input)
 			return (index);
 	}
+	return (0);
 }
 
-int	ft_is_available(char input, char *base)
+int		ft_is_available(char input, char *base)
 {
 	int	index;
 
@@ -35,7 +36,7 @@ int	ft_is_available(char input, char *base)
 	return (0);
 }
 
-int	ft_base_len(char *base)
+int		ft_base_len(char *base)
 {
 	int	base_len;
 
@@ -47,14 +48,14 @@ int	ft_base_len(char *base)
 	return (base_len);
 }
 
-int	ft_base_correct(char *base)
+int		ft_base_correct(char *base)
 {
 	int	i;
 	int	j;
 
 	i = -1;
 	if (!base[0] || !base[1])
-	       return (0);	
+		return (0);
 	while (base[++i])
 	{
 		j = -1;
@@ -69,13 +70,13 @@ int	ft_base_correct(char *base)
 	return (1);
 }
 
-int	ft_atoi_base(char *arr, char *base)
+int		ft_atoi_base(char *str, char *base)
 {
 	int	ans;
 	int	index;
 	int	minus;
 	int	base_len;
-	
+
 	ans = 0;
 	index = 0;
 	minus = 0;

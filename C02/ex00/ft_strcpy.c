@@ -6,13 +6,13 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 18:39:05 by namwkim           #+#    #+#             */
-/*   Updated: 2021/02/28 18:41:29 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/08 17:26:09 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest,char *src)
+char		*ft_strcpy(char *dest, char *src)
 {
-	int	index;
+	int		index;
 
 	index = -1;
 	while (src[++index])
@@ -20,5 +20,5 @@ char	*ft_strcpy(char *dest,char *src)
 		dest[index] = src[index];
 	}
 	dest[index] = '\0';
-	return dest;
+	return (dest);
 }

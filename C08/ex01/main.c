@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:56:36 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 10:49:15 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/09 12:45:15 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/09 12:49:16 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_boolean.h"
 
-void	ft_print_params(char *a)
+void	ft_putstr(char *str)
 {
-	while (*a)
-	{
-		write(1, &(*(a++)), 1);
-	}
-	write(1, "\n", 1);
+	while (*str)
+		write(1, str++, 1);
+}
+
+t_bool	ft_is_even(int nbr)
+{
+	return ((EVEN(nbr)) ? TRUE : FALSE);
 }
 
 int		main(int argc, char **argv)
 {
-	*argv++;
-	while (*argv)
-		ft_print_params(*argv++);
-	return (0);
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+		ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }

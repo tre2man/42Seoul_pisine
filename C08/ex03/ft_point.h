@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 22:26:07 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 17:18:26 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/09 13:50:56 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/09 16:03:17 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
-{
-	int	index;
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-	index = -1;
-	while (str[++index])
-	{
-		if (str[index] < 'A' || str[index] > 'Z')
-			return (0);
-	}
-	return (1);
-}
+typedef struct	t_point
+{
+	int			x;
+	int			y;
+} 				t_point;
+
+#endif

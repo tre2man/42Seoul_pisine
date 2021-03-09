@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 17:25:10 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 17:25:58 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/08 19:03:31 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int	index;
 

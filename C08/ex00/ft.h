@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 19:53:37 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 19:57:52 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/09 10:54:24 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/09 10:56:36 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strlen(char *str);
+#ifndef FT_H
+# define FT_H
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
 void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int	ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int	ft_atoi_base(char *str, char *base);
-
-int main()
-{
-	return (0);
-}
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);i
+#endif

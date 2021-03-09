@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 17:33:01 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 17:57:28 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/08 19:39:10 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 void	ft_rec(int nb)
 {
 	char	a;
+
 	if (nb > 9)
 		ft_rec(nb / 10);
 	a = (nb % 10) + '0';
 	write(1, &a, 1);
 }
-	
+
 void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return;
+		return ;
 	}
 	if (nb < 0)
 	{

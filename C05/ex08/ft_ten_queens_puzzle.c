@@ -6,19 +6,19 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:53:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/02 01:24:36 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 16:39:12 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	g_arr[10];
+int			g_arr[10];
 
-void	ft_print(void)
+void		ft_print(void)
 {
-	int	i;
+	int		i;
 	char	a;
-	
+
 	i = -1;
 	while (++i < 10)
 	{
@@ -28,10 +28,10 @@ void	ft_print(void)
 	write(1, "\n", 1);
 }
 
-int	ft_correct(int index)
+int			ft_correct(int index)
 {
-	int	i;
-	int	check;
+	int		i;
+	int		check;
 
 	i = -1;
 	while (++i < index)
@@ -45,30 +45,31 @@ int	ft_correct(int index)
 	return (1);
 }
 
-void	ft_rec(int start)
+void		ft_rec(int start)
 {
-	int	i;
+	int		i;
 
 	i = -1;
-	if (number == 10)
+	if (start == 10)
 	{
 		ft_print();
-		return;
+		return ;
 	}
 	while (++i < 10)
 	{
 		g_arr[start] = i;
-		if(ft_correct(start))
+		if (ft_correct(start))
 			ft_rec(start + 1);
 	}
 }
 
-int	ft_ten_queens_puzzle(void)
+int			ft_ten_queens_puzzle(void)
 {
-	int	i;
+	int		i;
 
 	i = -1;
 	while (++i < 10)
 		g_arr[i] = 0;
 	ft_rec(0);
+	return (1);
 }

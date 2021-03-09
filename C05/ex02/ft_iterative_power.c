@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 22:49:56 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 22:55:12 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 17:20:59 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_iterative_power(int nb, int power)
 	while (power-- > 0)
 	{
 		ans *= nb;
+		if (ans < nb)
+			return (0);
 	}
-	return ans;
+	return (ans);
 }
