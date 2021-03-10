@@ -79,22 +79,20 @@ int		ft_atoi_base(char *str, char *base)
 
 	ans = 0;
 	index = 0;
-	minus = 0;
+	minus = 1;
 	if (!ft_base_correct(base))
 		return (0);
 	base_len = ft_base_len(base);
 	while (str[index] < '0' || str[index] > '9')
 	{
 		if (str[index] == '-')
-			minus++;
+			minus *= -1;
 		index++;
 	}
 	while (ft_is_available(str[index], base))
 	{
-		ans = (ans * base_len) + ft_num(str[index], base);
+		ans = (ans * base_len) + ft_num(str[index], base) * minus;
 		index++;
 	}
-	if (minus % 2)
-		ans *= -1;
 	return (ans);
 }
