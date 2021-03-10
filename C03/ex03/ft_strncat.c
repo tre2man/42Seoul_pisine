@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 11:31:57 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 17:09:12 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 09:53:42 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	index;
-	unsigned int	dest_len;	
+	unsigned int	dest_len;
 
 	index = 0;
 	dest_len = 0;

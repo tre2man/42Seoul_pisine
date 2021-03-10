@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 22:26:07 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 17:18:26 by namwkim          ###   ########.fr       */
+/*   Created: 2021/03/09 13:04:31 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/09 13:07:11 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
-{
-	int	index;
-
-	index = -1;
-	while (str[++index])
-	{
-		if (str[index] < 'A' || str[index] > 'Z')
-			return (0);
-	}
-	return (1);
-}
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value) (Value > 0) ? Value : -Value
+#endif

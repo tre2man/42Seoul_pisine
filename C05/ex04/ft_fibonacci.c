@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:03:19 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 23:06:52 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 18:24:11 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	ft_fibonacci(int index)
 	else if (index == 1)
 		return (1);
 	else
-		return ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

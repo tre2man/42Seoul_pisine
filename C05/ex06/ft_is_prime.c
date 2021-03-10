@@ -6,13 +6,13 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:19:51 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 23:24:48 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 00:05:06 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_prime(int nb)
+int			ft_is_prime(int nb)
 {
-	int	num;
+	int		num;
 
 	num = 1;
 	if (nb < 2)

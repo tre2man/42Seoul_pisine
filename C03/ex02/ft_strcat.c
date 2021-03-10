@@ -6,14 +6,14 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 00:29:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 14:34:59 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 09:50:05 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char		*ft_strcat(char *dest, char *src)
 {
-	int	dest_index;
-	int	src_index;	
+	int		dest_index;
+	int		src_index;
 
 	dest_index = 0;
 	src_index = 0;
@@ -28,4 +28,3 @@ char	*ft_strcat(char *dest, char *src)
 	dest[dest_index] = '\0';
 	return (dest);
 }
-

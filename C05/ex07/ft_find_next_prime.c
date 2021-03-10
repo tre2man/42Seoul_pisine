@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:25:13 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 23:37:25 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/09 16:43:00 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int n)
+int	ft_is__prime(int n)
 {
 	int	check;
 
@@ -34,8 +34,7 @@ int	ft_find_next_prime(int nb)
 		return (2);
 	while (1)
 	{
-		if (ft_is_prime(++nb))
+		if (ft_is__prime(++nb))
 			return (nb);
 	}
 }
-
