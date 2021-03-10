@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 unsigned int	ft_strlen(char *src)
 {
 	unsigned int	index;
@@ -28,14 +27,14 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	dest_index = ft_strlen(dest);
 	src_index = 0;
+	if (size < dest_index)
+		return (ft_strlen(src) + size);
 	while (src[src_index] && dest_index + 1 < size)
 	{
 		dest[dest_index] = src[src_index];
 		dest_index++;
 		src_index++;
-	}
-	if (dest_index < size)
-		dest[dest_index] ='\0';
+	}	
 	while (src[src_index])
 	{
 		src_index++;

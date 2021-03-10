@@ -13,19 +13,19 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	index;
-	int	find_index;
+	int	find;
 
 	index = 0;
 	if (!to_find)
 		return (str);
 	while (str[index])
 	{
-		find_index = 0;
-		while (str[index + find_index] == to_find[find_index] && to_find[find_index])
-			find_index++;
-		if (!to_find[find_index])
+		find = 0;
+		while (to_find[find] && str[index + find] == to_find[find])
+			find++;
+		if (!to_find[find])
 			return (str + index);
 		index++;
 	}
-	return ('\0');
+	return (0);
 }

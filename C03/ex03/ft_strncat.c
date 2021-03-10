@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+#include <stdio.h>
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	index;
@@ -17,11 +20,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	index = 0;
 	dest_len = 0;
-	while (*dest)
-	{
-		dest++;
+	while (dest[dest_len])
 		dest_len++;
-	}
 	while (dest[index] && src[index] && index < nb)
 	{
 		dest[dest_len + index] = src[index];
