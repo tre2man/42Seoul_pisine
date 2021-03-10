@@ -10,17 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is__prime(int n)
+int			ft_is__prime(int nb)
 {
-	int	check;
+	int		num;
 
-	check = 2;
-	if (check == n)
+	num = 2;
+	if (nb < 2)
+		return (0);
+	if (nb == 2)
 		return (1);
-	while (check < n)
+	else
 	{
-		if (!(n % check++))
-			return (0);
+		while (num <= nb / num)
+		{
+			if (!(nb % num))
+				return (0);
+			num++;
+		}
 	}
 	return (1);
 }

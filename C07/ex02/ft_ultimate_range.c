@@ -10,17 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	length;
+	int	index;
 
-	if (min <= max)
-		return (NULL);
+	if (min >= max)
+		return (0);
+	index = 0;
 	length = max - min;
-	*range = (int*)malloc(sizeof(int) * length);
-	if (!*range)
+	if (length < 0)
 		return (-1);
+	*range = (int*)malloc(sizeof(int) * length);
 	while (min < max)
-		*range[index] = min++;
+	{
+		(*range)[index] = min++;
+		index++;
+	}
 	return (length);
 }

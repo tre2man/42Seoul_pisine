@@ -19,7 +19,7 @@ int	ft_sqrt(int nb)
 		return (0);
 	if (nb == 1)
 		return (1);
-	while (ans != nb)
+	while (ans != nb && ans <= nb / ans)
 	{
 		if ((nb / ans) == ans)
 			return (ans);

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-extern int	ft_num(char input, char *base);
-extern int	ft_base_len(char *base);
-extern int	ft_is_available(char input, char *base);
+int	ft_num(char input, char *base);
+int	ft_base_len(char *base);
+int	ft_is_available(char input, char *base);
 
 int	nbr_to_int(char *nbr, char *base_from, int base_len)
 {

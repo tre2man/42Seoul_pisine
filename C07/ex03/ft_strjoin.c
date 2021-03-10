@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 void	ft_assign_ans(char **strs, char *ans, char *sep, int size)
 {
@@ -30,7 +31,7 @@ void	ft_assign_ans(char **strs, char *ans, char *sep, int size)
 			while (sep[strs_len])
 				ans[malloc_len++] = sep[strs_len++];
 	}
-	ans[malloc_len + 1] = '\0';
+	ans[malloc_len] = '\0';
 }
 
 int	ft_str_len(char *str)
@@ -53,7 +54,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 	if (!strs)
 	{
-		ans = (char)malloc(sizeof(char));
+		ans = (char*)malloc(sizeof(char));
 		ans[0] = '\0';
 		return (ans);
 	}

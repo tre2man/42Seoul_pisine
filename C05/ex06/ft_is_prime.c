@@ -14,17 +14,18 @@ int			ft_is_prime(int nb)
 {
 	int		num;
 
-	num = 1;
+	num = 2;
 	if (nb < 2)
 		return (0);
 	if (nb == 2)
 		return (1);
 	else
 	{
-		while (++num < nb)
+		while (num <= nb / num)
 		{
 			if (!(nb % num))
 				return (0);
+			num++;
 		}
 	}
 	return (1);

@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 char	g_arr[16];
 
-extern char	*nbr_to_ans(int nbr, char *base_from);
+char	*nbr_to_ans(int nbr, char *base_from);
+int	nbr_to_int(char *nbr, char *base_from, int base_len);
 
 int	ft_is_available(char input, char *base)
 {
@@ -77,4 +79,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	ans = nbr_to_int(nbr, base_from, base_from_len);
 	ans_s = nbr_to_ans(ans, base_to);
 	return (ans_s);
+}
+
+int main()
+{
+	printf("%s",ft_convert_base("15","0123456789","01"));
 }

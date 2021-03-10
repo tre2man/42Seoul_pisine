@@ -16,12 +16,12 @@ int	*ft_range(int min, int max)
 {
 	int	*ans;
 	int	index;
-	long long	range;
+	unsigned int	range;
 
 	index = 0;
 	if (min >= max)
 		return (NULL);
-	range = max - min;
+	range = (unsigned int)(max - min);
 	ans = (int *)malloc(sizeof(int) * range);
 	while (min < max)
 		ans[index++] = min++;
