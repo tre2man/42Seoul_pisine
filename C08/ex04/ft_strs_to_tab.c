@@ -6,19 +6,19 @@
 /*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:55:16 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 16:24:21 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 11:11:45 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <stdlib.h>
 
-t_stock_str		ft_av_to_struct(char *c)
+t_stock_str			ft_av_to_struct(char *c)
 {
-	t_stock_str			ans;
-	int					len;
-	char 				*str;
-	char 				*copy;
+	t_stock_str		ans;
+	int				len;
+	char 			*str;
+	char 			*copy;
 	
 	len = 0;
 	while(c[len])
@@ -37,12 +37,12 @@ t_stock_str		ft_av_to_struct(char *c)
 	return (ans);
 }
 
-t_stock_str		*ft_strs_to_tab(int ac, char **av)
+t_stock_str			*ft_strs_to_tab(int ac, char **av)
 {
-	int					ans_len;
-	char				*ans_str;
-	char				*ans_copy;
-	t_stock_str			*ans;
+	int				ans_len;
+	char			*ans_str;
+	char			*ans_copy;
+	t_stock_str		*ans;
 
 	ans_len = 0;
 	if (!av || !*av)

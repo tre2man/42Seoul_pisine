@@ -6,16 +6,16 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:42:47 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/02 23:50:02 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 10:50:58 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	*ft_range(int min, int max)
+int					*ft_range(int min, int max)
 {
-	int	*ans;
-	int	index;
+	int				*ans;
+	int				index;
 	unsigned int	range;
 
 	index = 0;
@@ -25,5 +25,5 @@ int	*ft_range(int min, int max)
 	ans = (int *)malloc(sizeof(int) * range);
 	while (min < max)
 		ans[index++] = min++;
-	return ans;
+	return (ans);
 }

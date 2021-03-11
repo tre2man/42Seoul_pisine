@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 11:48:06 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 17:07:44 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 15:06:32 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,13 @@ char	*ft_strstr(char *str, char *to_find)
 		index++;
 	}
 	return (0);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	printf("%s\n", ft_strstr(" ", "-"));	
+	printf("%s\n", strstr(" ", "-"));
 }

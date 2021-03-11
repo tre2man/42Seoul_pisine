@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:25:13 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 16:43:00 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 10:40:00 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int			ft_is__prime(int nb)
 	return (1);
 }
 
-int	ft_find_next_prime(int nb)
+int			ft_find_next_prime(int nb)
 {
-	int	ans;
+	int		ans;
 
 	ans = 2;
 	if (nb < 2)

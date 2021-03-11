@@ -6,21 +6,21 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 10:53:39 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 15:42:50 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 10:59:20 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-char	g_arr[16];
+char		g_arr[16];
 
-char	*nbr_to_ans(int nbr, char *base_from);
-int	nbr_to_int(char *nbr, char *base_from, int base_len);
+char		*nbr_to_ans(int nbr, char *base_from);
+int			nbr_to_int(char *nbr, char *base_from, int base_len);
 
-int	ft_is_available(char input, char *base)
+int			ft_is_available(char input, char *base)
 {
-	int	index;
+	int		index;
 
 	index = -1;
 	while (base[++index])
@@ -31,9 +31,9 @@ int	ft_is_available(char input, char *base)
 	return (0);
 }
 
-int	ft_base_len(char *base)
+int			ft_base_len(char *base)
 {
-	int	base_len;
+	int		base_len;
 
 	base_len = 0;
 	while (base[base_len])
@@ -41,10 +41,10 @@ int	ft_base_len(char *base)
 	return (base_len);
 }
 
-int	ft_base_correct(char *base)
+int			ft_base_correct(char *base)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = -1;
 	if (!base[0] || !base[1])
@@ -63,12 +63,12 @@ int	ft_base_correct(char *base)
 	return (1);
 }
 
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	index;
-	int	ans;
-	int	base_from_len;
-	int	base_to_len;
+	int		index;
+	int		ans;
+	int		base_from_len;
+	int		base_to_len;
 	char	*ans_s;
 
 	ans = -1;

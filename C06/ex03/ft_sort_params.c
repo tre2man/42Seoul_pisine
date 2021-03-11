@@ -6,20 +6,20 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 16:44:50 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 13:35:17 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 10:41:17 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_params(char *a)
+void		ft_print_params(char *a)
 {
 	while (*a)
 		write(1, &(*(a++)), 1);
 	write(1, "\n", 1);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int			ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s2)
 	{

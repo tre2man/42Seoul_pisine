@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 00:27:34 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/10 23:59:13 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 14:16:53 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	index;
 
 	index = 0;
+	if (!n)
+		return (0);
 	while ((s1[index] || s2[index]) && index + 1 < n)
 	{
 		if (s1[index] > s2[index])

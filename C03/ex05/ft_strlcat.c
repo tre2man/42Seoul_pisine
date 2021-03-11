@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 00:29:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 10:34:40 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 15:12:26 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,20 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest_index++;
 		src_index++;
 	}
+	dest[dest_index] = '\0';
 	while (src[src_index])
 	{
 		src_index++;
 		dest_index++;
 	}
 	return (dest_index);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	printf("%u\n", ft_strlcat("asdf","kkk",5));
+	printf("%lu\n", strlcat("asdf","kkk",5));
 }

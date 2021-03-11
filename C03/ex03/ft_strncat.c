@@ -6,13 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 11:31:57 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/10 23:55:34 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 15:04:53 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char				*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	index;
 	unsigned int	dest_len;
@@ -21,7 +19,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest_len = 0;
 	while (dest[dest_len])
 		dest_len++;
-	while (dest[index] && src[index] && index < nb)
+	while (src[index] && index < nb)
 	{
 		dest[dest_len + index] = src[index];
 		index++;
