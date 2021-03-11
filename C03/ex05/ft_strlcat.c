@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 00:29:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/01 16:42:38 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 10:34:40 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[dest_index] = src[src_index];
 		dest_index++;
 		src_index++;
-	}	
+	}
 	while (src[src_index])
 	{
 		src_index++;
