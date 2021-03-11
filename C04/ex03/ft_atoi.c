@@ -6,15 +6,23 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 19:07:29 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 17:01:26 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 17:00:12 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_atoi(char *str)
+int			ft_isspace(char c)
 {
-	int	index;
-	int	minus;
-	int	ans;
+	if (c >= 9 && c <= 13)
+		return (1);
+	if (c == ' ')
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(char *str)
+{
+	int		index;
+	int		minus;
+	int		ans;
 
 	index = 0;
 	minus = 1;

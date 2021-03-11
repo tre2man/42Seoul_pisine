@@ -6,13 +6,14 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 23:53:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 16:39:12 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 18:13:29 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 int			g_arr[10];
+int			sum;
 
 void		ft_print(void)
 {
@@ -53,6 +54,7 @@ void		ft_rec(int start)
 	if (start == 10)
 	{
 		ft_print();
+		sum++;
 		return ;
 	}
 	while (++i < 10)
@@ -66,10 +68,12 @@ void		ft_rec(int start)
 int			ft_ten_queens_puzzle(void)
 {
 	int		i;
+	int		sum;
 
 	i = -1;
+	sum = 0;
 	while (++i < 10)
 		g_arr[i] = 0;
 	ft_rec(0);
-	return (1);
+	return (sum);
 }
