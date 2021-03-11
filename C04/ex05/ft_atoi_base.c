@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 22:05:23 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 15:01:30 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 23:54:16 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,26 +73,25 @@ int		ft_base_correct(char *base)
 int		ft_atoi_base(char *str, char *base)
 {
 	int	ans;
-	int	index;
 	int	minus;
 	int	base_len;
 
 	ans = 0;
-	index = 0;
 	minus = 1;
 	if (!ft_base_correct(base))
 		return (0);
 	base_len = ft_base_len(base);
-	while (str[index] < '0' || str[index] > '9')
+	while (*str != '+' && *str != '-')
+		str++;
+	while (*str == '-' || *str == '+' || *(str + 1) == '-')
 	{
-		if (str[index] == '-')
-			minus *= -1;
-		index++;
+		minus *= -1;
+		str++;
 	}
-	while (ft_is_available(str[index], base))
+	while (ft_is_available(*str, base))
 	{
-		ans = (ans * base_len) + ft_num(str[index], base) * minus;
-		index++;
+		ans = (ans * base_len) + ft_num(*str, base) * minus;
+		str++;
 	}
 	return (ans);
 }
