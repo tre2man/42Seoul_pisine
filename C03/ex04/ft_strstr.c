@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 11:48:06 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 18:50:30 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/11 23:01:31 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strstr(char *str, char *to_find)
 	int	find;
 
 	index = 0;
-	if (!to_find)
+	if (!*to_find)
 		return (str);
 	while (str[index])
 	{
@@ -28,13 +28,4 @@ char	*ft_strstr(char *str, char *to_find)
 		index++;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	printf("%s\n", ft_strstr(" ", "-"));	
-	printf("%s\n", strstr(" ", "-"));
 }
