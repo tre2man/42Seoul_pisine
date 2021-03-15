@@ -63,12 +63,9 @@ void		ft_sort(char **input, int len)
 int			main(int argc, char **argv)
 {
 	int		len;
-
+	
 	len = 0;
-	while (argv[len])
-		len++;
-	ft_sort(argv, len);
-	len = 0;
+	ft_sort(argv, argc);
 	while (argv[++len])
 		ft_print_params(argv[len]);
 	return (0);

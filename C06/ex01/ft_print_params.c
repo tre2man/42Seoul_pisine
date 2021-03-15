@@ -15,16 +15,16 @@
 void	ft_print_params(char *a)
 {
 	while (*a)
-	{
 		write(1, &(*(a++)), 1);
-	}
 	write(1, "\n", 1);
 }
 
 int		main(int argc, char **argv)
 {
-	*argv++;
-	while (*argv)
-		ft_print_params(*argv++);
+	int	index;
+	
+	index = 1;
+	while (index < argc)
+		ft_print_params(argv[index++]);		
 	return (0);
 }

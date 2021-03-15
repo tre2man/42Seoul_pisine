@@ -21,12 +21,7 @@ void	ft_rev_params(char *a)
 
 int		main(int argc, char **argv)
 {
-	int	index;
-
-	index = 0;
-	while (argv[index])
-		index++;
-	while (--index > 0)
-		ft_rev_params(argv[index]);
+	while (--argc > 0)
+		ft_rev_params(argv[argc]);
 	return (0);
 }
