@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 void		ft_assign_ans(char **strs, char *ans, char *sep, int size)
 {

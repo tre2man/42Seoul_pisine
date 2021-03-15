@@ -13,34 +13,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char		g_arr[16];
-
-char		*nbr_to_ans(int nbr, char *base_from);
-int			nbr_to_int(char *nbr, char *base_from, int base_len);
-
-int			ft_is_available(char input, char *base)
-{
-	int		index;
-
-	index = -1;
-	while (base[++index])
-	{
-		if (base[index] == input)
-			return (1);
-	}
-	return (0);
-}
-
-int			ft_base_len(char *base)
-{
-	int		base_len;
-
-	base_len = 0;
-	while (base[base_len])
-		base_len++;
-	return (base_len);
-}
-
 int			ft_base_correct(char *base)
 {
 	int		i;
@@ -65,20 +37,16 @@ int			ft_base_correct(char *base)
 
 char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int		index;
-	int		ans;
-	int		base_from_len;
-	int		base_to_len;
-	char	*ans_s;
+	
+	char	*ans_str;
+	int		ans_int;
 
 	ans = -1;
 	if (!ft_base_correct(base_from) || !ft_base_correct(base_to))
 		return (NULL);
-	base_from_len = ft_base_len(base_from);
-	base_to_len = ft_base_len(base_to);
-	ans = nbr_to_int(nbr, base_from, base_from_len);
-	ans_s = nbr_to_ans(ans, base_to);
-	return (ans_s);
+	ans_int = ft_atoi(nbr);
+	ans_str = 
+	return (ans_str);
 }
 
 int main()

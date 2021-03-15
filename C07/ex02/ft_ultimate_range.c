@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+#include <stdio.h>
 int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	length;
@@ -30,4 +30,15 @@ int	ft_ultimate_range(int **range, int min, int max)
 		index++;
 	}
 	return (length);
+}
+
+int main()
+{
+	int *ans;
+	int len;
+	int n;
+	
+	len = ft_ultimate_range(&ans, -5, 5);
+	for(n=0;n<len;n++)
+		printf("%d ",ans[n]);
 }

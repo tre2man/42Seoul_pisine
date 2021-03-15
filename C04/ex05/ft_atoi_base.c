@@ -10,45 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_num(char input, char *base)
+int		ft_available(char c,char *base)
 {
-	int	index;
-
-	index = -1;
-	while (base[++index])
+	while(*base)
 	{
-		if (base[index] == input)
-			return (index);
-	}
-	return (0);
-}
-
-int		ft_is_available(char input, char *base)
-{
-	int	index;
-
-	index = -1;
-	while (base[++index])
-	{
-		if (base[index] == input)
+		if (c == *base)
 			return (1);
+		base++;
 	}
 	return (0);
 }
 
-int		ft_base_len(char *base)
+void	ft_make_ans(char c, int *ans, char *base, int minus)
 {
-	int	base_len;
-
-	base_len = 0;
-	while (base[base_len])
+	int		index;
+	int		len;
+	
+	index = -1;
+	len = 0;
+	while (base[len])
+		len++;
+	while (base[++index])
 	{
-		base_len++;
+		if (base[index] == c)
+		{
+			*ans = ((*ans) * len) + minus * index;
+			return ;
+		}
 	}
-	return (base_len);
 }
 
-int		ft_base_correct(char *base)
+int		ft_base_correct(char *str, char *base)
 {
 	int	i;
 	int	j;
@@ -70,28 +62,35 @@ int		ft_base_correct(char *base)
 	return (1);
 }
 
+int			ft_atoi(char *str, char *base)
+{
+	int 	minus;
+	int		ans;
+
+	minus = 1;
+	ans = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			minus *= -1;
+		str++;
+	}
+	while (ft_available(*str, base))
+	{
+		ft_make_ans(*str, &ans, base, minus);
+		str++;
+	}
+	return (ans);
+}
+
 int		ft_atoi_base(char *str, char *base)
 {
-	int	ans;
-	int	minus;
-	int	base_len;
+	int		ans;
 
-	ans = 0;
-	minus = 1;
-	if (!ft_base_correct(base))
+	if (!ft_base_correct(str, base))
 		return (0);
-	base_len = ft_base_len(base);
-	while (*str != '+' && *str != '-')
-		str++;
-	while (*str == '-' || *str == '+' || *(str + 1) == '-')
-	{
-		minus *= -1;
-		str++;
-	}
-	while (ft_is_available(*str, base))
-	{
-		ans = (ans * base_len) + ft_num(*str, base) * minus;
-		str++;
-	}
+	ans = ft_atoi(str, base);
 	return (ans);
 }

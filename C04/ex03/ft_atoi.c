@@ -17,15 +17,17 @@ int	ft_atoi(char *str)
 
 	minus = 1;
 	ans = 0;
-	while (*str != '+' && *str != '-')
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
-	while (*str == '-' || *str == '+' || *(str + 1) == '-')
+	while (*str == '+' || *str == '-')
 	{
+		if (*str == '-')
+			minus *= -1;
 		str++;
-		minus *= -1;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
+		printf("%c",*str);
 		ans = (ans * 10) + minus * (*str - '0');
 		str++;
 	}
