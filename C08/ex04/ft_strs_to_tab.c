@@ -13,60 +13,103 @@
 #include "ft_stock_str.h"
 #include <stdlib.h>
 
-t_stock_str			ft_av_to_struct(char *c)
+int	ft_strlen(char *c)
 {
-	t_stock_str		ans;
-	int				len;
-	char 			*str;
-	char 			*copy;
+	int	i;
 	
-	len = 0;
-	while(c[len])
-		len++;
-	str = (char*)malloc(sizeof(char) * len);
-	len = 0;
-	while(c[len])
+	i = 0;
+	while (c[i])
+		i++;
+	return (i);
+}
+
+void	ft_assign(t_stock_str *ans, char *c)
+{
+	int	index;
+	
+	index = 0;
+	ans->size = ft_strlen(c);
+	ans->str = (char*)malloc(sizeof(char) * (ans->size + 1));
+	while (c[index])
 	{
-		str[len] = c[len];
-		len++;
+		ans->str[index] = c[index];
+		index++;
 	}
-	str[len] = '\0';
-	ans.size = len;
-	ans.str = str;
-	ans.copy = ans.str;
+	ans->str[index] = '\0';
+	ans->copy = c;
+}
+
+struct s_stock_str		*ft_strs_to_tab(int ac, char **av)
+{
+	int					i;
+	struct s_stock_str	*ans;
+	
+	i = 0;
+	ans = (struct s_stock_str *)malloc(sizeof(struct s_stock_str) * (ac + 1));
+	while (i < ac)
+	{
+		ft_assign(&ans[i], *av);
+		av++;
+		i++;
+	}
+	ans[i].str = '\0';
 	return (ans);
 }
 
-t_stock_str			*ft_strs_to_tab(int ac, char **av)
-{
-	int				ans_len;
-	char			*ans_str;
-	char			*ans_copy;
-	t_stock_str		*ans;
 
-	ans_len = 0;
-	if (!av || !*av)
-		return (0);
-	while(av[ans_len])
-		ans_len++;
-	ans = (t_stock_str*)malloc(sizeof(t_stock_str) * ans_len);
-	ans_len = 0;
-	while (*av)
-	{
-		ans[ans_len] = ft_av_to_struct(*av);
-		av++;
-		ans_len++;
-		printf("1");
-	}
-	return (ans);
+
+
+
+
+
+
+
+
+
+
+
+
+
+void    ft_putchar(char c)
+{
+        write(1, &c, 1);
+}
+
+void    ft_putstr(char *c)
+{
+        while (*c)
+                ft_putchar(*(c++));
+}
+
+void    ft_putnum(int a)
+{
+    if (a > 9)
+		ft_putnum(a / 10);
+	ft_putchar((a % 10) + '0');
+}
+
+void    ft_show_tab(struct s_stock_str *par)
+{
+        while (par->str)
+        {
+                ft_putstr(par->str);
+                ft_putstr("\n");
+                ft_putnum(par->size);
+                ft_putstr("\n");
+                ft_putstr(par->copy);
+                ft_putstr("\n");
+                par++;
+        }
 }
 
 int main()
 {
-	t_stock_str *ans;
-	char **a = (char**)malloc(sizeof(char*) * 3);
-	a[0] = "123";
+	struct s_stock_str *ans;
+	char **a = (char**)malloc(sizeof(char*) * 4);
+	a[0] = "1111111111";
 	a[1] = "asdf";
 	a[2] = "5678";
+	a[3] = '\0';
 	ans = ft_strs_to_tab(3,a);
+	ft_show_tab(ans);
 }

@@ -11,12 +11,42 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-int			ft_base_correct(char *base)
+int		ft_strlen(char *c);
+char	*ft_conv(int input, char *base);
+
+int		ft_available(char c,char *base)
 {
-	int		i;
-	int		j;
+	while(*base)
+	{
+		if (c == *base)
+			return (1);
+		base++;
+	}
+	return (0);
+}
+
+void	ft_make_ans(char c, int *ans, char *base, int minus)
+{
+	int		index;
+	int		len;
+	
+	index = -1;
+	len = ft_strlen(base);
+	while (base[++index])
+	{
+		if (base[index] == c)
+		{
+			*ans = ((*ans) * len) + minus * index;
+			return ;
+		}
+	}
+}
+
+int		ft_base_correct(char *base)
+{
+	int	i;
+	int	j;
 
 	i = -1;
 	if (!base[0] || !base[1])
@@ -35,21 +65,38 @@ int			ft_base_correct(char *base)
 	return (1);
 }
 
+int			ft_atoi(char *str, char *base)
+{
+	int 	minus;
+	int		ans;
+
+	minus = 1;
+	ans = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			minus *= -1;
+		str++;
+	}
+	while (ft_available(*str, base))
+	{
+		ft_make_ans(*str, &ans, base, minus);
+		str++;
+	}
+	return (ans);
+}
+
 char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	
 	char	*ans_str;
 	int		ans_int;
 
-	ans = -1;
 	if (!ft_base_correct(base_from) || !ft_base_correct(base_to))
 		return (NULL);
-	ans_int = ft_atoi(nbr);
-	ans_str = 
+	ans_int = ft_atoi(nbr, base_from);
+	ans_str = ft_conv(ans_int, base_to);
 	return (ans_str);
-}
-
-int main()
-{
-	printf("%s",ft_convert_base("15","0123456789","01"));
 }

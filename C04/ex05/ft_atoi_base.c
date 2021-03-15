@@ -40,7 +40,7 @@ void	ft_make_ans(char c, int *ans, char *base, int minus)
 	}
 }
 
-int		ft_base_correct(char *str, char *base)
+int		ft_base_correct(char *base)
 {
 	int	i;
 	int	j;
@@ -89,7 +89,7 @@ int		ft_atoi_base(char *str, char *base)
 {
 	int		ans;
 
-	if (!ft_base_correct(str, base))
+	if (!ft_base_correct(base))
 		return (0);
 	ans = ft_atoi(str, base);
 	return (ans);
