@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 16:44:50 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 10:41:17 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/16 12:18:51 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		ft_sort(char **input, int len)
 int			main(int argc, char **argv)
 {
 	int		len;
-	
+
 	len = 0;
 	ft_sort(argv, argc);
 	while (argv[++len])

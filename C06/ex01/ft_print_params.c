@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:56:36 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/09 10:49:15 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/16 12:18:29 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_print_params(char *a)
 int		main(int argc, char **argv)
 {
 	int	index;
-	
+
 	index = 1;
 	while (index < argc)
-		ft_print_params(argv[index++]);		
+		ft_print_params(argv[index++]);
 	return (0);
 }
