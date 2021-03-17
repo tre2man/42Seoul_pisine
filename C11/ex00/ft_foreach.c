@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:53:39 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 17:59:11 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 19:43:54 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
 

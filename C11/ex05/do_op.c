@@ -6,13 +6,13 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:13:46 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 19:14:26 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 19:46:56 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int num)
+void		ft_putnbr(int num)
 {
 	char	c;
 
@@ -27,7 +27,7 @@ void	ft_putnbr(int num)
 	write(1, &c, 1);
 }
 
-int	ft_opr(char *c)
+int		ft_opr(char *c)
 {
 	if (c[1])
 		return (0);
@@ -45,7 +45,7 @@ int	ft_opr(char *c)
 		return (0);
 }
 
-int		ft_cal(int front, int rear, int cal)
+int			ft_cal(int front, int rear, int cal)
 {
 	if (cal == 1)
 		return (front + rear);
@@ -61,10 +61,10 @@ int		ft_cal(int front, int rear, int cal)
 		return (0);
 }
 
-int		ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
-	int	minus;
-	int	ans;
+	int		minus;
+	int		ans;
 
 	minus = 1;
 	ans = 0;
@@ -84,11 +84,11 @@ int		ft_atoi(char *str)
 	return (ans);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	int 	front;
-	int	rear;
-	int	(*fp)(char*);
+	int		rear;
+	int		(*fp)(char*);
 
 	fp = ft_opr;
 	if (argc != 4)

@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:06:07 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 18:09:03 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 19:44:44 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	count;
 	int	i;

@@ -6,11 +6,11 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:03:28 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 18:05:57 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 19:44:31 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	while (*tab)
 	{

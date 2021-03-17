@@ -6,13 +6,13 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 19:01:40 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 19:14:09 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 19:46:11 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int			ft_strcmp(char *s1, char *s2)
 {
-	int	index;
+	int		index;
 
 	index = 0;
 	while (s1[index] && s2[index])
@@ -31,10 +31,10 @@ int	ft_strcmp(char *s1, char *s2)
 		return (0);
 }
 
-void	ft_sort_string_tab(char **tab)
+void		ft_sort_string_tab(char **tab)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*temp;
 
 	i = 0;
