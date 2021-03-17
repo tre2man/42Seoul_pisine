@@ -6,12 +6,31 @@
 /*   By: namwkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:55:16 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/16 14:52:39 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 10:30:52 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <stdlib.h>
+
+char					*ft_strdup(char *src)
+{
+	char				*ans;
+	int					src_len;
+
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	ans = (char *)malloc(sizeof(char) * src_len);
+	src_len = 0;
+	while (src[src_len])
+	{
+		ans[src_len] = src[src_len];
+		src_len++;
+	}
+	ans[src_len] = '\0';
+	return (ans);
+}
 
 int						ft_strlen(char *c)
 {
@@ -30,13 +49,9 @@ void					ft_assign(t_stock_str *ans, char *c)
 	index = 0;
 	ans->size = ft_strlen(c);
 	ans->str = (char*)malloc(sizeof(char) * (ans->size + 1));
-	while (c[index])
-	{
-		ans->str[index] = c[index];
-		index++;
-	}
-	ans->str[index] = '\0';
-	ans->copy = c;
+	ans->str = ft_strdup(c);
+	ans->copy = (char*)malloc(sizeof(char) * (ans->size + 1));
+	ans->copy = ft_strdup(c);
 }
 
 struct s_stock_str		*ft_strs_to_tab(int ac, char **av)
@@ -44,14 +59,15 @@ struct s_stock_str		*ft_strs_to_tab(int ac, char **av)
 	int					i;
 	struct s_stock_str	*ans;
 
-	i = 0;
+	i = -1;
 	ans = (struct s_stock_str *)malloc(sizeof(struct s_stock_str) * (ac + 1));
-	while (i < ac)
+	if (!ans)
+		return (0);
+	while (++i < ac)
 	{
 		ft_assign(&ans[i], *av);
 		av++;
-		i++;
 	}
-	ans[i].str = '\0';
+	ans[i].str = 0;
 	return (ans);
 }

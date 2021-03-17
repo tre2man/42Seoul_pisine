@@ -6,16 +6,16 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:53:18 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/03 00:55:25 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 10:58:06 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-int	ft_ultimate_range(int **range, int min, int max)
+
+int			ft_ultimate_range(int **range, int min, int max)
 {
-	int	length;
-	int	index;
+	int		length;
+	int		index;
 
 	if (min >= max)
 		return (0);
@@ -30,15 +30,4 @@ int	ft_ultimate_range(int **range, int min, int max)
 		index++;
 	}
 	return (length);
-}
-
-int main()
-{
-	int *ans;
-	int len;
-	int n;
-	
-	len = ft_ultimate_range(&ans, -5, 5);
-	for(n=0;n<len;n++)
-		printf("%d ",ans[n]);
 }

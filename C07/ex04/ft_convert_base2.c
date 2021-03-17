@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 11:01:00 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 11:08:08 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 11:04:39 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int			ft_strlen(char *c)
 {
-	int 	len;
-	
+	int		len;
+
 	len = 0;
 	while (c[len])
 		len++;
@@ -28,7 +28,7 @@ void		ft_rev(char *input)
 	int		end;
 	int		index;
 	char	temp;
-	
+
 	if (*input == '-')
 		start = 1;
 	else
@@ -49,16 +49,16 @@ char		*ft_conv(int input, char *base)
 	int		len;
 	int		index;
 	char	*ans;
-	
+
 	index = 0;
 	len = ft_strlen(base);
 	ans = (char*)malloc(sizeof(char) * 100);
-	if(input < 0)
+	if (input < 0)
 	{
 		ans[index++] = '-';
 		input *= -1;
 	}
-	if(input == 0)
+	if (input == 0)
 		ans[index++] = '0';
 	while (input > 0)
 	{

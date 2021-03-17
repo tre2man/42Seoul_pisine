@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 22:05:23 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 23:54:16 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/16 21:09:28 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,10 @@ int		ft_atoi_base(char *str, char *base)
 		return (0);
 	ans = ft_atoi(str, base);
 	return (ans);
+}
+
+#include <stdio.h>
+int main()
+{
+	printf("%d\n", ft_atoi_base("10000000000000000", "01"));
 }

@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:43:24 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/08 17:01:20 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 11:08:05 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int			ft_strlen(char *c)
 {
-	int 	i;
-	
+	int		i;
+
 	i = 0;
 	while (c[i])
 		i++;
-	return i;
+	return (i);
 }
 
 int			ft_is_available(char c, char *charset)
@@ -28,7 +28,7 @@ int			ft_is_available(char c, char *charset)
 	{
 		if (c == *charset)
 			return (1);
-			charset++;
+		charset++;
 	}
 	return (0);
 }
@@ -58,24 +58,26 @@ void		ft_assign_word(char **ans, char *str, char *charset)
 {
 	char	*assign;
 	int		index;
-	int 	start;
-	
+	int		start;
+
 	index = 0;
 	start = 0;
 	while (str[++index])
 	{
-		if (ft_is_available(str[index - 1], charset) && !ft_is_available(str[index], charset))
+		if (ft_is_available(str[index - 1], charset) &&
+				!ft_is_available(str[index], charset))
 		{
-			start =index;
+			start = index;
 		}
-		if (!ft_is_available(str[index - 1], charset) && ft_is_available(str[index], charset))
+		if (!ft_is_available(str[index - 1], charset) &&
+				ft_is_available(str[index], charset))
 		{
 			*ans = index_to_str(start, index - 1, str);
 			ans++;
 		}
 	}
 	*ans = index_to_str(start, index - 1, str);
-	*(++ans) = '\0';
+	*(++ans) = 0;
 }
 
 char		**ft_split(char *str, char *charset)
@@ -84,18 +86,20 @@ char		**ft_split(char *str, char *charset)
 	char	*input;
 	int		index;
 	int		str_sum_len;
-	
+
 	str_sum_len = 0;
 	if (!ft_is_available(*str, charset))
 		str_sum_len++;
 	index = 0;
 	while (str[++index])
 	{
-		if (!ft_is_available(str[index - 1], charset) && ft_is_available(str[index], charset))
+		if (!ft_is_available(str[index - 1], charset) &&
+				ft_is_available(str[index], charset))
+		{
 			str_sum_len++;
+		}
 	}
 	ans = (char**)malloc(sizeof(char*) * (str_sum_len + 1));
 	ft_assign_word(ans, str, charset);
-	index = 0;
 	return (ans);
 }

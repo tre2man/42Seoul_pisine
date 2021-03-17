@@ -6,18 +6,18 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 10:53:39 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 10:59:20 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 11:02:45 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *c);
-char	*ft_conv(int input, char *base);
+int				ft_strlen(char *c);
+char			*ft_conv(int input, char *base);
 
-int		ft_available(char c,char *base)
+int				ft_available(char c, char *base)
 {
-	while(*base)
+	while (*base)
 	{
 		if (c == *base)
 			return (1);
@@ -26,11 +26,11 @@ int		ft_available(char c,char *base)
 	return (0);
 }
 
-void	ft_make_ans(char c, int *ans, char *base, int minus)
+void			ft_make_ans(char c, int *ans, char *base, int minus)
 {
-	int		index;
-	int		len;
-	
+	int			index;
+	int			len;
+
 	index = -1;
 	len = ft_strlen(base);
 	while (base[++index])
@@ -43,10 +43,10 @@ void	ft_make_ans(char c, int *ans, char *base, int minus)
 	}
 }
 
-int		ft_base_correct(char *base)
+int				ft_base_correct(char *base)
 {
-	int	i;
-	int	j;
+	int			i;
+	int			j;
 
 	i = -1;
 	if (!base[0] || !base[1])
@@ -65,10 +65,10 @@ int		ft_base_correct(char *base)
 	return (1);
 }
 
-int			ft_atoi(char *str, char *base)
+int				ft_atoi(char *str, char *base)
 {
-	int 	minus;
-	int		ans;
+	int			minus;
+	int			ans;
 
 	minus = 1;
 	ans = 0;
@@ -88,11 +88,10 @@ int			ft_atoi(char *str, char *base)
 	return (ans);
 }
 
-char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
+char			*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	
-	char	*ans_str;
-	int		ans_int;
+	char		*ans_str;
+	int			ans_int;
 
 	if (!ft_base_correct(base_from) || !ft_base_correct(base_to))
 		return (NULL);

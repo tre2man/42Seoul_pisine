@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 18:37:05 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/16 14:50:31 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/17 10:30:29 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	ft_show_tab(struct s_stock_str *par)
 		ft_putstr("\n");
 		ft_putstr(par->copy);
 		ft_putstr("\n");
+		par++;
 	}
 }

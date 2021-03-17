@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 19:07:29 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/16 22:17:23 by namwkim          ###   ########.fr       */
+/*   Created: 2021/02/28 23:56:09 by namwkim           #+#    #+#             */
+/*   Updated: 2021/03/08 17:59:33 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int minus;
-	int ans;
+	int	index;
 
-	minus = 1;
-	ans = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	while (*str == '+' || *str == '-')
+	index = 0;
+	while (s1[index] && s2[index])
 	{
-		if (*str == '-')
-			minus *= -1;
-		str++;
+		if (s1[index] > s2[index])
+			return (1);
+		else if (s1[index] < s2[index])
+			return (-1);
+		index++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		ans = (ans * 10) + minus * (*str - '0');
-		str++;
-	}
-	return (ans);
+	if (s1[index])
+		return (1);
+	else if (s2[index])
+		return (-1);
+	else
+		return (0);
 }
