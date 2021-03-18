@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:53:18 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 10:58:06 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/18 22:04:45 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int			ft_ultimate_range(int **range, int min, int max)
 		return (0);
 	index = 0;
 	length = max - min;
-	if (length < 0)
-		return (-1);
 	*range = (int*)malloc(sizeof(int) * length);
+	if (!range)
+		return (-1);
 	while (min < max)
 	{
 		(*range)[index] = min++;

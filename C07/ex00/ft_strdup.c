@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 22:28:07 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/16 12:17:54 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:30:25 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char		*ft_strdup(char *src)
 	src_len = 0;
 	while (src[src_len])
 		src_len++;
-	ans = (char *)malloc(sizeof(char) * src_len);
+	ans = (char *)malloc(sizeof(char) * (src_len + 1));
 	src_len = 0;
 	while (src[src_len])
 	{
