@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:13:46 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/17 19:46:56 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/18 22:19:04 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		ft_putnbr(int num)
 	write(1, &c, 1);
 }
 
-int		ft_opr(char *c)
+int			ft_opr(char *c)
 {
 	if (c[1])
 		return (0);
@@ -88,9 +88,7 @@ int			main(int argc, char **argv)
 {
 	int 	front;
 	int		rear;
-	int		(*fp)(char*);
 
-	fp = ft_opr;
 	if (argc != 4)
 		return (0);
 	else
@@ -98,13 +96,13 @@ int			main(int argc, char **argv)
 		front = ft_atoi(argv[1]);
 		rear = ft_atoi(argv[3]);
 	}
-	if (!rear && fp(argv[2]) == 4)
+	if (!rear && ft_opr(argv[2]) == 4)
 		write(1, "Stop : division by zero\n", 24);
-	else if (!rear && fp(argv[2]) == 5)
+	else if (!rear && ft_opr(argv[2]) == 5)
 		write(1, "Stop : modulo by zero\n", 22);
 	else
 	{
-		ft_putnbr(ft_cal(front, rear, fp(argv[2])));
+		ft_putnbr(ft_cal(front, rear, ft_opr(argv[2])));
 		write(1, "\n", 1);
 	}
 	return (0);
