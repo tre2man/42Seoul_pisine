@@ -6,7 +6,7 @@
 /*   By: namwkim <namwkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 23:42:47 by namwkim           #+#    #+#             */
-/*   Updated: 2021/03/11 10:50:58 by namwkim          ###   ########.fr       */
+/*   Updated: 2021/03/18 00:43:35 by namwkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int					*ft_range(int min, int max)
 {
 	int				*ans;
 	int				index;
-	unsigned int	range;
+	long long	range;
 
 	index = 0;
 	if (min >= max)
 		return (NULL);
-	range = (unsigned int)(max - min);
+	range = (long long)(max - min);
 	ans = (int *)malloc(sizeof(int) * range);
 	while (min < max)
 		ans[index++] = min++;

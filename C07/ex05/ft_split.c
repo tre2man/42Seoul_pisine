@@ -11,95 +11,77 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int			ft_strlen(char *c)
+int ft_strlen(char *str)
 {
-	int		i;
+	int i = 0;
 
-	i = 0;
-	while (c[i])
+	while (*(str++))
 		i++;
 	return (i);
 }
 
-int			ft_is_available(char c, char *charset)
+int ft_is_availabe(char c, char *str)
 {
-	while (*charset)
+	while (*str)
 	{
-		if (c == *charset)
+		if (c == *str)
 			return (1);
-		charset++;
+		str++;
 	}
 	return (0);
 }
 
-char		*index_to_str(int start, int end, char *c)
+int ft_get_strnum(char *str, char *charset)
 {
-	int		len;
-	int		index;
-	char	*ans;
+	int ans;
 
-	if (start > end)
-		return (0);
-	len = end - start + 2;
-	index = 0;
-	ans = (char*)malloc(sizeof(char) * len);
-	while (start <= end)
+	ans = 0;
+	while (*str)
 	{
-		ans[index] = c[start];
-		index++;
-		start++;
+		if (!ft_is_availabe(*str, charset))
+		{
+			ans++;
+			while (*str && !ft_is_availabe(*str, charset))
+				str++;
+		}
+		str++;
 	}
-	ans[index] = '\0';
 	return (ans);
 }
 
-void		ft_assign_word(char **ans, char *str, char *charset)
+void ft_until_strcpy(char *dest, char *from, char *until)
 {
-	char	*assign;
-	int		index;
-	int		start;
-
-	index = 0;
-	start = 0;
-	while (str[++index])
-	{
-		if (ft_is_available(str[index - 1], charset) &&
-				!ft_is_available(str[index], charset))
-		{
-			start = index;
-		}
-		if (!ft_is_available(str[index - 1], charset) &&
-				ft_is_available(str[index], charset))
-		{
-			*ans = index_to_str(start, index - 1, str);
-			ans++;
-		}
-	}
-	*ans = index_to_str(start, index - 1, str);
-	*(++ans) = 0;
+	while (from < until)
+		*(dest++) = *(from++);
+	*dest = 0;
 }
 
-char		**ft_split(char *str, char *charset)
+char **ft_split(char *str, char *charset)
 {
-	char	**ans;
-	char	*input;
-	int		index;
-	int		str_sum_len;
+	char **ans;
+	char *temp;
+	int sum_str;
+	int i;
 
-	str_sum_len = 0;
-	if (!ft_is_available(*str, charset))
-		str_sum_len++;
-	index = 0;
-	while (str[++index])
+	i = 0;
+	sum_str = ft_get_strnum(str, charset);
+	ans = (char **)malloc(sizeof(char *) * (sum_str + 1));
+	if (!ans)
+		return (0);
+	while (*str)
 	{
-		if (!ft_is_available(str[index - 1], charset) &&
-				ft_is_available(str[index], charset))
+		if (!ft_is_availabe(*str, charset))
 		{
-			str_sum_len++;
+			temp = str;
+			while (*str && !ft_is_availabe(*str, charset))
+				str++;
+			ans[i] = (char *)malloc(sizeof(char) * (str - temp + 1));
+			ft_until_strcpy(ans[i++], temp, str);
 		}
+		str++;
 	}
-	ans = (char**)malloc(sizeof(char*) * (str_sum_len + 1));
-	ft_assign_word(ans, str, charset);
+	ans[i] = 0;
 	return (ans);
 }
